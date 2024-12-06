@@ -15,8 +15,9 @@ import pandas as pd
 
 df=pd.read_csv('https://raw.githubusercontent.com/azwar-m/datasets/refs/heads/main/delaney_solubility_with_descriptors.csv')
 df
+print("Dataset Downloaded")
 
-df.shape
+print(df.shape)
 
 """# **Data Preparation**
 
@@ -54,6 +55,7 @@ from sklearn.linear_model import LinearRegression
 
 lr = LinearRegression()
 lr.fit(x_train, y_train)
+print("Model Trained")
 
 """### **Making Prediction**"""
 
@@ -75,4 +77,6 @@ lr_test_R2 = r2_score(y_test, y_lr_test_pred)
 
 lr_prediction = pd.DataFrame(['Linear Regression',lr_train_mse, lr_train_r2, lr_test_mse, lr_test_R2]).transpose()
 lr_prediction.columns = ['Model', 'Training MSE', 'Training R2', 'Test MSE', 'Test R2']
+print("Performance Evaluated")
 lr_prediction
+print(lr_prediction)
